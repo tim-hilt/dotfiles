@@ -8,7 +8,7 @@ set -gx PATH /home/tim/bin $PATH
 set -gx PKG_CONFIG_PATH /usr/lib/pkgconfig $PKG_CONFIG_PATH
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 
-eval (python -m virtualfish)
+# eval (python -m virtualfish)
 
 # Abbreviations
 abbr r 'ranger --choosedir=$HOME/.rangerdir; set LASTDIR (cat $HOME/.rangerdir); cd $LASTDIR'
@@ -54,4 +54,3 @@ abbr rdb "kill (ps -aux | grep dwm | sed '/dwmbar/!d' | awk '{print $2}') && /ho
 abbr pq "pacman -Q | fzy | awk '{print \$1}'"
 abbr pr "sudo pacman -Rns (pacman -Q | fzy | awk '{print \$1}')"
 abbr k "kill (ps -auxk -pcpu | fzy | awk '{print \$2}')"
-abbr nix "virsh start NixOS && virt-viewer NixOS&; disown (jobs -p); exit"
