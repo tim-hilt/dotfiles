@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Material Theme",
+    // Open settings as file, rather than as GUI
+    "workbench.settings.editor": "json",
+    // Deactivate startup windows
+    "workbench.startupEditor": "none",
+    // Deactivate System Title-Bar
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": -1,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    // Deactivates middle-mouse to insert from clipboard
+    // and selection to add to clipboard
+    "editor.selectionClipboard": false,
+}
