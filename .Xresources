@@ -1,0 +1,66 @@
+! Extensions for urxvt
+urxvt.perl-ext-common: resize-font
+
+! Transparency
+urxvt.depth: 32
+
+! Colors
+urxvt.background: #1C1E1F
+urxvt.foreground: #F8F8F2
+
+urxvt.color0: #1C1E1F
+urxvt.color1: #F92672
+urxvt.color2: #A6E22E
+urxvt.color3: #FFE792
+urxvt.color4: #66F9EF
+urxvt.color5: #F92672
+urxvt.color6: #66F9EF
+urxvt.color7: #F8F8F2
+urxvt.color8: gray50
+urxvt.color9: red
+urxvt.color10: green
+urxvt.color11: yellow
+urxvt.color12: #5c5cff
+urxvt.color13: magenta
+urxvt.color14: cyan
+urxvt.color15: white
+
+! Miscellaneous Config
+urxvt.scrollBar: false
+urxvt.font: xft:Source Code Pro:style=Regular:pixelsize=15
+urxvt.saveLines: 1000
+! URxvt.visualBell:  true
+
+! Padding
+urxvt.internalBorder: 20
+
+! sxiv:
+Sxiv.background: #1C1E1F
+Sxiv.foreground: #F8F8F2
+
+! rofi:
+rofi.modi:                           window,drun
+rofi.sidebar-mode:                   true
+rofi.terminal:                       urxvt
+rofi.opacity:                        100
+rofi.width:                          50
+rofi.lines:                          15
+rofi.columns:                        1
+rofi.font:                           Fira Sans 18
+rofi.show-icons:                     true
+rofi.icon-theme:                     Breeze-dark
+rofi.hide-scrollbar:                 true
+rofi.padding:                        30
+
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+rofi.fuzzy:                          false
+rofi.separator-style:                none
+rofi.markup-rows:                    false
+rofi.location:                       0
+
+! State:           'bg',      'fg',      'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #1f2223,    #F8F8F2,  #1f2223,  #27292b,  #F8F8F2
+
+! !                  'background', 'border'
+rofi.color-window:    #1f2223,      #1f2223

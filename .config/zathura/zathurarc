@@ -1,0 +1,48 @@
+set guioptions ""
+set font "FiraSans-Regular 10"
+
+set adjust-open width
+set smooth-scroll true
+set selection-notification false
+set selection-clipboard clipboard
+set highlight-transparency 0.5
+
+set window-title-basename true
+
+set default-bg "#1C1E1F"
+set default-fg "#F8F8F2"
+
+set notification-warning-bg "#FFE792"
+set notification-warning-fg "#1C1E1F"
+
+set notification-bg "#FFE792"
+set notification-fg "#1C1E1F"
+
+set notification-error-fg "#1C1E1F"
+set notification-error-bg "#F92672"
+
+set n-completion-items 10
+
+set completion-bg "#1C1E1F"
+set completion-fg "#F8F8F2"
+set completion-highlight-bg "#1C1E1F"
+set completion-highlight-fg "#FD971F"
+set completion-group-bg "#1C1E1F"
+set completion-group-fg "#F92672"
+
+set statusbar-bg "#1C1E1F"
+set statusbar-fg "#F8F8F2"
+
+set inputbar-bg "#1C1E1F"
+set inputbar-fg "#F8F8F2"
+
+set highlight-color "#A6E22E"
+set highlight-active-color "#A6E22E"
+
+set index-bg "#1C1E1F"
+# set index-fg "#F8F8F2"
+set index-active-bg "#1C1E1F"
+set index-active-fg "#FD971F"
+
+set recolor-darkcolor "#F8F8F2"
+set recolor-lightcolor "#1C1E1F"
