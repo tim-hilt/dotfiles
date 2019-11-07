@@ -1,0 +1,12 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Material Theme",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
+    "editor.minimap.enabled": false,
+    "workbench.settings.editor": "json",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.maxTokenizationLineLength": 40000,
+    "python.linting.flake8Enabled": true,
+    "workbench.editor.enablePreview": false,
+}
