@@ -9,4 +9,6 @@
     "editor.maxTokenizationLineLength": 40000,
     "python.linting.flake8Enabled": true,
     "workbench.editor.enablePreview": false,
+    "todo-tree.highlights.enabled": false,
+    "git.enableSmartCommit": true,
 }
