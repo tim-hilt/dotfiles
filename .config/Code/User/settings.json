@@ -6,7 +6,7 @@
     "workbench.startupEditor": "none",
     // Deactivate System Title-Bar
     "window.titleBarStyle": "custom",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
