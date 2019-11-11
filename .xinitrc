@@ -5,10 +5,10 @@
 session=${1:-dwm}
 case $session in
     dwm               ) insync start
-                        udiskie&
                         dunst&
                         /usr/local/bin/batterywarner.sh&
-                        xsetroot -solid "#161819"
+                        hsetroot -solid "#161819"
+                        compton --config /dev/null -c -r 50 --corner-radius 10&
 			while true;
 			do
 			    date=$(LC_ALL=de_DE.utf8 date +'%R Uhr | %a. %d.%m.%Y')

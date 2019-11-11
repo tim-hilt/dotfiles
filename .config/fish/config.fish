@@ -54,3 +54,4 @@ abbr rdb "kill (ps -aux | grep dwm | sed '/dwmbar/!d' | awk '{print $2}') && /ho
 abbr pq "pacman -Q | fzy | awk '{print \$1}'"
 abbr pr "sudo pacman -Rns (pacman -Q | fzy | awk '{print \$1}')"
 abbr k "kill (ps -auxk -pcpu | fzy | awk '{print \$2}')"
+abbr speedtest 'curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
