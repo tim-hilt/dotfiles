@@ -1,3 +1,4 @@
+
 #+TITLE: Emacs Configuration File
 #+AUTHOR: Tim Hilt
 #+DATE: 11.10.2019
@@ -159,15 +160,14 @@ it was implemented.
   (global-set-key (kbd "C-x 3")
                   (lambda ()
                     (interactive)
-                  (lambda ()(interactive)
                     (split-window-horizontally)
                     (other-window 1)))
   (global-set-key (kbd "C-a")
                   'back-to-indentation)
-  (global-set-key (kbd "M-RET")
-                  (lambda ()
-                    (interactive)
-                    (shell-command "alacritty&")))
+  ;; (global-set-key (kbd "M-RET")
+  ;;                 (lambda ()
+  ;;                   (interactive)
+  ;;                   (shell-command "alacritty&")))
   (require 'python)
   (define-key python-mode-map
     (kbd "C-c C-a")
@@ -190,12 +190,6 @@ it was implemented.
         ".md -o "
         (file-name-sans-extension (buffer-file-name))
         ".pdf"))))
-                  '(lambda ()
-                     (interactive)
-                     (shell-command "alacritty&")))
-  (require 'python)
-  (define-key python-mode-map
-    (kbd "C-c C-a") 'my-run-python)
 #+END_SRC
 
 ** Faces

@@ -7,8 +7,7 @@ case $session in
     dwm               ) insync start
                         dunst&
                         /usr/local/bin/batterywarner.sh&
-                        hsetroot -solid "#161819"
-                        compton --config /dev/null -c -r 50 --corner-radius 10&
+                        xsetroot -solid "#161819"
 			while true;
 			do
 			    date=$(LC_ALL=de_DE.utf8 date +'%R Uhr | %a. %d.%m.%Y')
@@ -28,7 +27,7 @@ case $session in
                         insync start
                         udiskie&
                         2bwm&
-                        exec urxvt;;
+                        exec alacritty;;
     # No known session, try to run it as command
     *                ) exec $1;;
 esac
