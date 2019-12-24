@@ -1,10 +1,17 @@
+# Start X at login
+# if status is-login
+#     if test -z "$DISPLAY" -a $XDG_VTNR = 1
+#         exec startx -- -keeptty
+#     end
+# end
+
 # Environment Variables
 set -x SHELL /usr/bin/fish
 set -x BROWSER firefox
 set -x EDITOR emacsclient -a emacs
 set -x VISUAL emacsclient -a emacs
-set -gx QT_QPA_PLATFORMTHEME qt5ct
-set -gx PATH /home/tim/bin $PATH
+# set -gx QT_QPA_PLATFORMTHEME qt5ct
+set -gx PATH /home/tim/.emacs.d/bin/ /home/tim/bin $PATH
 set -gx PKG_CONFIG_PATH /usr/lib/pkgconfig $PKG_CONFIG_PATH
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
 
@@ -51,7 +58,7 @@ abbr wa 'chromium --app=https://web.whatsapp.com --new-window&; disown (jobs -lp
 abbr jl 'jupyter lab --no-browser&; sleep 1; surf (jupyter notebook list | sed "s/Currently running servers://g;s/?.*//g" | tr -d "\n")&; sleep 2; disown (jobs -p) && exit'
 abbr rdb "kill (ps -aux | grep dwm | sed '/dwmbar/!d' | awk '{print $2}') && /home/tim/scripts/dwmbar.sh& && disown (jobs -lp) && exit"
 
-abbr pq "pacman -Q | fzy | awk '{print \$1}'"
-abbr pr "sudo pacman -Rns (pacman -Q | fzy | awk '{print \$1}')"
-abbr k "kill (ps -auxk -pcpu | fzy | awk '{print \$2}')"
+abbr pq "pacman -Q | fzf | awk '{print \$1}'"
+abbr pr "sudo pacman -Rns (pacman -Q | fzf | awk '{print \$1}')"
+abbr k "kill (ps -auxk -pcpu | fzf | awk '{print \$2}')"
 abbr speedtest 'curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'

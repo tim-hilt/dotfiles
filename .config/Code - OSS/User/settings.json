@@ -2,7 +2,7 @@
     "workbench.startupEditor": "none",
     "workbench.colorTheme": "Material Theme",
     "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "custom",
+    // "window.titleBarStyle": "custom",
     "editor.minimap.enabled": false,
     "workbench.settings.editor": "json",
     "workbench.iconTheme": "vscode-icons",

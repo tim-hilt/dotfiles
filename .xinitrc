@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
@@ -28,6 +28,7 @@ case $session in
                         udiskie&
                         2bwm&
                         exec alacritty;;
+    kde               ) exec startplasma-x11;;
     # No known session, try to run it as command
-    *                ) exec $1;;
+    *                ) exec "$1";;
 esac

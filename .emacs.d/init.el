@@ -1,18 +1,55 @@
-(org-babel-load-file (concat user-emacs-directory "README.org"))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-minimum-prefix-length 1)
- '(company-tooltip-align-annotations t)
- '(package-selected-packages
-   (quote
-    (disable-mouse which-key org-bullets sudo-edit hungry-delete rainbow-delimiters multiple-cursors expand-region visual-regexp-steroids visual-regexp toc-org org-toc-mode matlab-mode julia-mode lsp-ui company-box auctex magit dashboard doom-modeline all-the-icons counsel swiper doom-themes company-lsp lsp-mode company yasnippet-snippets yasnippet use-package)))
- '(use-package-always-defer t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#1c1e1f" :foreground "#d6d6d4" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "PfEd" :family "Hack")))))
+;;; init.el -*- lexical-binding: t; -*-
+;;
+;; Author:  Henrik Lissner <henrik@lissner.net>
+;; URL:     https://github.com/hlissner/doom-emacs
+;;
+;;   =================     ===============     ===============   ========  ========
+;;   \\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //
+;;   ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||
+;;   || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||
+;;   ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||
+;;   || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||
+;;   ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||
+;;   || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||
+;;   ||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||
+;;   ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||
+;;   ||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||
+;;   ||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||
+;;   ||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||
+;;   ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||
+;;   ||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||
+;;   ||.=='    _-'                                                     `' |  /==.||
+;;   =='    _-'                                                            \/   `==
+;;   \   _-'                                                                `-_   /
+;;    `''                                                                      ``'
+;;
+;; These demons are not part of GNU Emacs.
+;;
+;;; License: MIT
+
+;; A big contributor to startup times is garbage collection. We up the gc
+;; threshold to temporarily prevent it from running, then reset it later by
+;; enabling `gcmh-mode'. Not resetting it will cause stuttering/freezes.
+(setq gc-cons-threshold most-positive-fixnum)
+
+;; In noninteractive sessions, prioritize non-byte-compiled source files to
+;; prevent the use of stale byte-code. Otherwise, it saves us a little IO time
+;; to skip the mtime checks on every *.elc file.
+(setq load-prefer-newer noninteractive)
+
+(let (file-name-handler-alist)
+  ;; Ensure Doom is running out of this file's directory
+  (setq user-emacs-directory (file-name-directory load-file-name)))
+
+;; Load the heart of Doom Emacs
+(load (concat user-emacs-directory "core/core")
+      nil 'nomessage)
+
+;; And let 'er rip!
+(doom-initialize)
+(if noninteractive
+    (doom-initialize-packages)
+  (doom-initialize-core)
+  (doom-initialize-modules)
+  (add-hook 'window-setup-hook #'doom-display-benchmark-h)
+  (add-to-list 'command-switch-alist (cons "--restore" #'doom-restore-session-handler)))
